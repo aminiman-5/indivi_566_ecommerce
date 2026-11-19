@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customers - Amin E-Commerce</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dashboard-body">
+
+    <div class="dashboard-container">
+
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <i class="bi bi-bag-check-fill"></i>
+                <span>Amin E-Commerce</span>
+            </div>
+
+            <ul class="sidebar-menu">
+                <li><a href="index.html"><i class="bi bi-grid"></i> Dashboard</a></li>
+                <li><a href="products.html"><i class="bi bi-box-seam"></i> Products</a></li>
+                <li><a href="orders.html"><i class="bi bi-cart"></i> Orders</a></li>
+                <li><a href="customers.html" class="active"><i class="bi bi-people"></i> Customers</a></li>
+                <li><a href="analytics.html"><i class="bi bi-bar-chart"></i> Analytics</a></li>
+            </ul>
+
+            <div class="sidebar-bottom">
+                <p>Admin Account</p>
+                <button class="logout-button" id="logoutButton">
+                    <i class="bi bi-box-arrow-right"></i> Logout
+                </button>
+            </div>
+        </aside>
+
+        <main class="dashboard-main">
+
+            <div class="dashboard-header">
+                <div>
+                    <h2>Customers Management</h2>
+                    <p>Manage and view your registered customers.</p>
+                </div>
+                <div class="admin-profile">
+                    <i class="bi bi-person-circle"></i>
+                    <span>Administrator</span>
+                </div>
+            </div>
+
+            <div class="summary-grid">
+                <div class="summary-card">
+                    <div>
+                        <p>Total Customers</p>
+                        <h3 id="totalCustomers">0</h3>
+                    </div>
+                    <i class="bi bi-people-fill"></i>
+                </div>
+
+                <div class="summary-card">
+                    <div>
+                        <p>Active Customers</p>
+                        <h3 id="activeCustomers">0</h3>
+                    </div>
+                    <i class="bi bi-person-check-fill"></i>
+                </div>
+
+                <div class="summary-card">
+                    <div>
+                        <p>Total Orders</p>
+                        <h3 id="customerOrders">0</h3>
+                    </div>
+                    <i class="bi bi-cart-check-fill"></i>
+                </div>
+            </div>
+
+            <div class="dashboard-panel">
+                <div class="panel-header">
+                    <div>
+                        <h4>Customer List</h4>
+                        <p>View and manage customer information.</p>
+                    </div>
+
+                    <button class="btn btn-purple" data-bs-toggle="modal" data-bs-target="#addCustomerModal">
+                        <i class="bi bi-plus-circle"></i> Add Customer
+                    </button>
+                </div>
+
+                <div class="table-controls">
+                    <input type="text" id="customerSearch" class="form-control"
+                        placeholder="Search customer name or email...">
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table dashboard-table">
+                        <thead>
+                            <tr>
+                                <th>Customer ID</th>
+                                <th>Customer Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Registration Date</th>
+                                <th>Total Orders</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="customerTable">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <footer class="dashboard-footer">
+                <p>© 2026 Amin E-Commerce Management Sdn. Bhd. All Rights Reserved.</p>
+            </footer>
+
+        </main>
+    </div>
+
+    <!-- Add Customer Modal -->
+    <div class="modal fade" id="addCustomerModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title">Add New Customer</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+                    <form id="customerForm">
+
+                        <div class="mb-3">
+                            <label class="form-label">Customer Name</label>
+                            <input type="text" id="customerName" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" id="customerEmail" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Phone Number</label>
+                            <input type="text" id="customerPhone" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Registration Date</label>
+                            <input type="date" id="registrationDate" class="form-control" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-purple w-100">Save Customer</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/customers.js"></script>
+
+</body>
+</html>

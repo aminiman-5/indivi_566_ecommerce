@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics - Amin E-Commerce</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dashboard-body">
+
+    <div class="dashboard-container">
+
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <i class="bi bi-bag-check-fill"></i>
+                <span>Amin E-Commerce</span>
+            </div>
+
+            <ul class="sidebar-menu">
+                <li><a href="index.html"><i class="bi bi-grid"></i> Dashboard</a></li>
+                <li><a href="products.html"><i class="bi bi-box-seam"></i> Products</a></li>
+                <li><a href="orders.html"><i class="bi bi-cart"></i> Orders</a></li>
+                <li><a href="customers.html"><i class="bi bi-people"></i> Customers</a></li>
+                <li><a href="analytics.html" class="active"><i class="bi bi-bar-chart"></i> Analytics</a></li>
+            </ul>
+
+            <div class="sidebar-bottom">
+                <p>Admin Account</p>
+                <button class="logout-button" id="logoutButton">
+                    <i class="bi bi-box-arrow-right"></i> Logout
+                </button>
+            </div>
+        </aside>
+
+        <main class="dashboard-main">
+
+            <div class="dashboard-header">
+                <div>
+                    <h2>Sales Analytics</h2>
+                    <p>View business performance and sales information.</p>
+                </div>
+                <div class="admin-profile">
+                    <i class="bi bi-person-circle"></i>
+                    <span>Administrator</span>
+                </div>
+            </div>
+
+            <div class="summary-grid">
+                <div class="summary-card">
+                    <div>
+                        <p>Total Revenue</p>
+                        <h3>RM 24,580</h3>
+                    </div>
+                    <i class="bi bi-currency-dollar"></i>
+                </div>
+
+                <div class="summary-card">
+                    <div>
+                        <p>Total Orders</p>
+                        <h3>1,248</h3>
+                    </div>
+                    <i class="bi bi-cart-check-fill"></i>
+                </div>
+
+                <div class="summary-card">
+                    <div>
+                        <p>Average Order Value</p>
+                        <h3>RM 19.70</h3>
+                    </div>
+                    <i class="bi bi-graph-up-arrow"></i>
+                </div>
+            </div>
+
+            <div class="analytics-grid">
+
+                <div class="dashboard-panel analytics-panel">
+                    <div class="panel-header">
+                        <div>
+                            <h4>Monthly Sales Report</h4>
+                            <p>Sales revenue from January to June.</p>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="monthlySalesChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="dashboard-panel analytics-panel">
+                    <div class="panel-header">
+                        <div>
+                            <h4>Order Status</h4>
+                            <p>Summary of current order status.</p>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="orderStatusChart"></canvas>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="dashboard-panel">
+                <div class="panel-header">
+                    <div>
+                        <h4>Business Performance</h4>
+                        <p>Important information about the store.</p>
+                    </div>
+                </div>
+
+                <div class="performance-list">
+                    <div>
+                        <span>Best Sales Month</span>
+                        <strong>June</strong>
+                    </div>
+                    <div>
+                        <span>Popular Product Category</span>
+                        <strong>Fashion</strong>
+                    </div>
+                    <div>
+                        <span>Customer Satisfaction</span>
+                        <strong>Good</strong>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="dashboard-footer">
+                <p>© 2026 Amin E-Commerce Management Sdn. Bhd. All Rights Reserved.</p>
+            </footer>
+
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/analytics.js"></script>
+
+</body>
+</html>
